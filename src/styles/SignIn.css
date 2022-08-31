@@ -1,0 +1,64 @@
+.signIn {
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signIn__image {
+  height: 50px;
+  margin: 30px;
+}
+
+form {
+  border: 1px solid lightgrey;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 75%;
+}
+
+form > h1 {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+form > input {
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+form > h5 {
+  margin-bottom: 10px;
+  /* font-weight: 400; */
+}
+
+.signIn__question {
+  margin: 20px;
+  font-weight: 400;
+  text-align: center;
+  color: rgb(128, 128, 128);
+}
+
+.signIn__button {
+  background-color: #f0c14b;
+  border: 1px solid;
+  border-radius: 2px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.signIn__createButton {
+  border: 1px solid;
+  border-radius: 2px;
+  height: 30px;
+  border-color: darkgray;
+}
+@media only screen and (max-width: 600px) {
+}

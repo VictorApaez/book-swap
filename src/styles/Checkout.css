@@ -1,0 +1,36 @@
+.checkout {
+  display: flex;
+  background-color: rgb(241, 241, 241);
+  overflow: scroll;
+}
+.checkout__ad {
+  width: 100%;
+}
+.checkout__left {
+  background-color: red;
+}
+.checkout__list {
+  background-color: white;
+  padding: 40px 10px;
+}
+
+.checkout__listTitle {
+  padding: 10px;
+  margin-right: 5px;
+  border-bottom: 1px solid lightgray;
+}
+
+.checkout__right {
+  margin: 20px;
+  /* background-color: white; */
+}
+
+@media only screen and (max-width: 600px) {
+  .checkout {
+    flex-direction: column;
+    align-items: center;
+  }
+  .checkout__left {
+    align-items: center;
+  }
+}
