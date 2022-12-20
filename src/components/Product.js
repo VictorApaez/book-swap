@@ -1,22 +1,20 @@
 import React from "react";
-import { useContext } from "react";
 import "../styles/Product.css";
-import { StateContext } from "../StateProvider";
+import { addToBasket } from "../store";
+import { useDispatch } from "react-redux";
 
 function Product({ id, info, price, rating, image }) {
-  const [state, dispatch] = useContext(StateContext);
-
-  const addToBasket = () => {
-    dispatch({
-      type: "ADD_TO_BASKET",
-      item: {
-        id: id,
-        info: info,
-        image: image,
-        price: price,
-        rating: rating,
-      },
-    });
+  const dispatch = useDispatch();
+  const addToBasketButton = () => {
+    dispatch(
+      addToBasket({
+        id,
+        info,
+        price,
+        rating,
+        image,
+      })
+    );
   };
 
   return (
@@ -31,13 +29,13 @@ function Product({ id, info, price, rating, image }) {
           {/* Creating an empty array with the length of "rating" */}
           {Array(rating)
             .fill(null)
-            .map(() => (
-              <p>⭐</p>
+            .map((_, i) => (
+              <p key={i}>⭐</p>
             ))}
         </div>
       </div>
       <img className="product__image" src={image} alt=""></img>
-      <button onClick={addToBasket} className="product__button">
+      <button onClick={addToBasketButton} className="product__button">
         Add to cart
       </button>
     </div>

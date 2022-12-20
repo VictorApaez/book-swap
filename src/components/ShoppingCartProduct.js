@@ -1,15 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import "../styles/ShoppingCartProduct.css";
-import { StateContext } from "../StateProvider";
+import { useDispatch } from "react-redux";
+import { removeFromBasket } from "../store";
 
 function ShoppingCartProduct({ id, info, price, rating, image }) {
-  const [{ basket }, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
 
-  const removeFromBasket = () => {
-    dispatch({
-      type: "REMOVE_FROM_BASKET",
-      id: id,
-    });
+  const removeFromBasketBtn = () => {
+    dispatch(removeFromBasket({ id: id }));
   };
 
   return (
@@ -21,12 +19,12 @@ function ShoppingCartProduct({ id, info, price, rating, image }) {
         <div className="shoppingCartProduct__rating">
           {Array(rating)
             .fill(null)
-            .map(() => (
-              <p>⭐</p>
+            .map((_, i) => (
+              <p key={i}>⭐</p>
             ))}
         </div>
         <button
-          onClick={removeFromBasket}
+          onClick={removeFromBasketBtn}
           className="shoppingCartProduct__button"
         >
           Remove item

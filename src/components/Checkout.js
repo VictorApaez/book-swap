@@ -1,15 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
 import "../styles/Checkout.css";
 import Subtotal from "../components/Subtotal.js";
-import { StateContext } from "../StateProvider.js";
 import ShoppingCartProduct from "../components/ShoppingCartProduct";
+import { useSelector } from "react-redux";
 
 function Checkout() {
-  const [{ basket }, dispatch] = useContext(StateContext);
+  const basket = useSelector((state) => {
+    return state.basket;
+  });
   console.log(basket);
   return (
     <div className="checkout">
-      <div className="checkout_left">
+      <div className="checkout__left">
         <img
           className="checkout__ad"
           alt=""
@@ -18,8 +20,9 @@ function Checkout() {
         <div className="checkout__list">
           <h2 className="checkout__listTitle">Shopping Cart</h2>
 
-          {basket.map((item) => (
+          {basket.map((item, i) => (
             <ShoppingCartProduct
+              key={i}
               id={item.id}
               info={item.info}
               price={item.price}

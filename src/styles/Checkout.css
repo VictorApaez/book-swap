@@ -1,27 +1,28 @@
 .checkout {
   display: flex;
   background-color: rgb(241, 241, 241);
-  overflow: scroll;
+  height: 100%;
+  max-width: 1500px;
 }
 .checkout__ad {
   width: 100%;
 }
 .checkout__left {
-  background-color: red;
+  width: 100%;
 }
 .checkout__list {
   background-color: white;
-  padding: 40px 10px;
+  padding: 40px 0px;
 }
 
 .checkout__listTitle {
-  padding: 10px;
-  margin-right: 5px;
+  /* padding: 10px; */
+  margin-left: 25px;
   border-bottom: 1px solid lightgray;
 }
 
 .checkout__right {
-  margin: 20px;
+  /* margin: 20px; */
   /* background-color: white; */
 }
 

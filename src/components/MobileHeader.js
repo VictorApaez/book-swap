@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
-import { useContext } from "react";
-import { StateContext } from "../StateProvider";
-import { auth } from "../firebase";
 
 function MobileHeader() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -13,12 +10,7 @@ function MobileHeader() {
     setNavbarOpen(!navbarOpen);
     console.log(navbarOpen);
   };
-  const [{ basket, user }, dispatch] = useContext(StateContext);
-  const handleAuth = () => {
-    if (user) {
-      auth.signOut();
-    }
-  };
+
   return (
     <div className="mobile__header">
       <Link to="/">
@@ -40,17 +32,12 @@ function MobileHeader() {
         </div>
         <div className="mobileNav__links">
           <Link
-            to={!user && "/logIn"}
+            to={"/logIn"}
             style={{ textDecoration: "none", width: "100%", padding: "0" }}
             onClick={handleToggle}
           >
-            <div onClick={handleAuth} className="header__option">
-              <span className="header__optionLineOne">
-                {user ? "Hello " + user?.email : "Hello User"}
-              </span>
-              <span className="header__optionLineTwo">
-                {user ? "Sign Out" : "Sign In"}
-              </span>
+            <div className="header__option">
+              <span className="header__optionLineTwo">Sign In</span>
             </div>
           </Link>
           <div className="header__option">
@@ -68,9 +55,6 @@ function MobileHeader() {
           >
             <div className="header__optionBasket">
               <ShoppingBasketIcon />
-              <span className="header__optionLineTwo header__basketCount">
-                {basket?.length}
-              </span>
             </div>
           </Link>
         </div>

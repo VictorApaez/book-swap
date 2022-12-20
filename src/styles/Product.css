@@ -5,18 +5,18 @@
   justify-content: space-between;
   min-width: 300px;
   background-color: white;
-  width: 96%;
-  height: 400px;
+  /* height: 400px; */
   z-index: 1;
   margin: 10px;
   padding: 20px;
-  box-sizing: border-box;
+  width: calc(100%-50px);
 }
 
 .product__info {
-  height: 100px;
+  max-height: 300px;
   width: 100%;
   margin-bottom: 10px;
+  padding: 20px;
 }
 
 .product__image {
@@ -44,11 +44,17 @@
   background-color: #f0c14b;
   border: none;
   margin-top: 1-px;
-  width: 190px;
+  width: 100px;
   text-align: center;
   border-radius: 7px;
+  margin: 10px;
 }
 
 .product__button:hover {
-  
+}
+
+@media only screen and (min-width: 600px) {
+  .product {
+    width: calc(100%);
+  }
 }

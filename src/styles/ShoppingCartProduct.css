@@ -2,9 +2,10 @@
   position: relative;
   background-color: white;
   display: flex;
-  margin: 0 20px;
+  margin: 0 10px;
   padding: 20px;
   border-bottom: 1px solid rgb(207, 207, 207);
+  padding-right: 100px;
 }
 
 .shoppingCartProduct__image {
@@ -14,7 +15,7 @@
   height: 180px;
 }
 .shoppingCartProduct__info {
-  margin: 0 70px;
+  margin: 0 30px;
 }
 .shoppingCartProduct__title {
   margin-bottom: 3px;
