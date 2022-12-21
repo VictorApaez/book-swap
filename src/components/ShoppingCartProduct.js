@@ -12,7 +12,10 @@ function ShoppingCartProduct({ id, info, price, rating, image }) {
 
   return (
     <div className="shoppingCartProduct">
-      <img className="shoppingCartProduct__image" alt="" src={image}></img>
+      <div className="shoppingCartProduct__image__container">
+        <img className="shoppingCartProduct__image" alt="" src={image}></img>
+      </div>
+
       <div className="shoppingCartProduct__info">
         <p className="shoppingCartProduct__title">{info}</p>
 
@@ -23,6 +26,9 @@ function ShoppingCartProduct({ id, info, price, rating, image }) {
               <p key={i}>⭐</p>
             ))}
         </div>
+        <p className="shoppingCartProduct__price">
+          $<strong>{price}</strong>
+        </p>
         <button
           onClick={removeFromBasketBtn}
           className="shoppingCartProduct__button"
@@ -30,9 +36,6 @@ function ShoppingCartProduct({ id, info, price, rating, image }) {
           Remove item
         </button>
       </div>
-      <p className="shoppingCartProduct__price">
-        $<strong>{price}</strong>
-      </p>
     </div>
   );
 }
