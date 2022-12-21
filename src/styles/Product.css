@@ -3,13 +3,13 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 300px;
+  /* min-width: 300px; */
   background-color: white;
-  /* height: 400px; */
+  height: 500px;
   z-index: 1;
   margin: 10px;
   padding: 20px;
-  width: calc(100%-50px);
+  width: 100%;
 }
 
 .product__info {
@@ -40,13 +40,12 @@
 
 .product__button {
   cursor: pointer;
-  height: 22px;
-  background-color: #f0c14b;
+  padding: 8px;
+  background-color: rgb(247, 202, 0);
   border: none;
-  margin-top: 1-px;
-  width: 100px;
+  width: 120px;
   text-align: center;
-  border-radius: 7px;
+  border-radius: 10px;
   margin: 10px;
 }
 

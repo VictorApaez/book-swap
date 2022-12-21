@@ -19,6 +19,7 @@
   height: fit-content;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   z-index: 1;
   box-sizing: border-box;
 }
