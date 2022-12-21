@@ -3,6 +3,7 @@
   background-color: rgb(241, 241, 241);
   height: 100%;
   max-width: 1500px;
+  position: relative;
 }
 .checkout__ad {
   width: 100%;
@@ -22,8 +23,8 @@
 }
 
 .checkout__right {
-  /* margin: 20px; */
-  /* background-color: white; */
+  width: 100%;
+  max-width: 300px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -33,5 +34,8 @@
   }
   .checkout__left {
     align-items: center;
+  }
+  .checkout__right {
+    max-width: unset;
   }
 }
