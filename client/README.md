@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 # https://shopping-center-va.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -70,9 +70,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# amazon-clone
->>>>>>> 711fb69d86d4ce19ab4383231a72453c2dd8b041
 
 https://challenge-cdee6.web.app/
-
