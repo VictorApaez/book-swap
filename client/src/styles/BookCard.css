@@ -1,0 +1,50 @@
+.book-card {
+  background-image: linear-gradient(
+    rgba(62, 80, 252, 0.4),
+    var(--main-dark-color)
+  );
+  border-radius: 20px;
+  min-width: 300px;
+  width: 100%;
+  height: 240px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-20px);
+  cursor: pointer;
+}
+
+.book-card > img {
+  object-fit: cover;
+  width: 128px;
+  height: 195px;
+  border-radius: 20px;
+  position: absolute;
+  top: -30px;
+  left: 25px;
+}
+
+.book-card-info {
+  margin-left: 20px;
+  width: 45%;
+}
+
+.book-card-info * {
+  margin-bottom: 10px;
+}
+
+.book-card-info > p {
+  color: rgb(158, 158, 158);
+}
+
+.book-card-info > button {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(35, 184, 226);
+}
