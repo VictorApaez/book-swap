@@ -1,0 +1,20 @@
+.books-wrapper {
+  overflow: scroll;
+  flex: 1;
+  height: 100%;
+  margin: 30px;
+}
+
+.books-wrapper > h1 {
+  margin-bottom: 40px;
+  margin-left: 20px;
+}
+
+.books-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 30px;
+  padding: 50px 0px;
+  width: 100%;
+}
