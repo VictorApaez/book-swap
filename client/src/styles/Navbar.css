@@ -1,0 +1,7 @@
+.navbar {
+  height: 100%;
+  flex-basis: 100px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background-color: var(--navbar-darker-color);
+}
