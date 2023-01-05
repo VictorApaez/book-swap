@@ -3,6 +3,12 @@
   flex: 1;
   height: 100%;
   margin: 30px;
+  padding-right: 17px;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.books-wrapper::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .books-wrapper > h1 {

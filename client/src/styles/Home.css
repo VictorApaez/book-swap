@@ -1,34 +1,4 @@
 .home {
-  display: flex;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1500px;
-  background-color: rgb(234, 237, 237);
-}
-
-.home__image {
   width: 100%;
-  z-index: -10;
-  margin-bottom: -150px;
-  mask-image: linear-gradient(rgba(0, 0, 0, 2), transparent);
-}
-
-.home__row {
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  z-index: 1;
-  box-sizing: border-box;
-}
-
-@media only screen and (max-width: 600px) {
-  .home__row {
-    flex-direction: column;
-  }
-  .home__image {
-    margin-bottom: -70px;
-  }
+  height: 100%;
 }
