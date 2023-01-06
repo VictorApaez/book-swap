@@ -4,5 +4,5 @@
   display: flex;
   color: white;
   width: 100vw;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
