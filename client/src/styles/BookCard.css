@@ -1,6 +1,6 @@
 .book-card {
   background-image: linear-gradient(
-    rgba(62, 80, 252, 0.4),
+    rgba(83, 100, 255, 0.3),
     var(--main-dark-color)
   );
   border-radius: 20px;

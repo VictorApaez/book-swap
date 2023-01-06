@@ -1,7 +1,25 @@
 .navbar {
   height: 100%;
-  flex-basis: 100px;
+  flex-basis: 260px;
   flex-grow: 0;
   flex-shrink: 0;
   background-color: var(--navbar-darker-color);
+  overflow-y: scroll;
+  padding: 20px 0px;
 }
+.navbar::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.navbar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid rgb(10, 126, 243);
+}
+
+/* .categories-container {
+  border-top: 1px solid white;
+} */
