@@ -1,20 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { getBookBySubject } from "../services/subject";
 import BookCard from "./BookCard";
 import "../styles/BooksContainer.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addToShowBooks } from "../store/index.js";
 
 function BooksContainer({ subject }) {
-  const [books, setBooks] = useState();
+  const dispatch = useDispatch();
+  const { books, name } = useSelector((state) => {
+    console.log(state.showBooks);
+    return state.showBooks;
+  });
 
   useEffect(async () => {
     const res = await getBookBySubject(subject);
-    console.log(res.items);
-    setBooks(res.items);
+    const result = {
+      books: res.items,
+      name: subject,
+    };
+    dispatch(addToShowBooks(result));
   }, []);
 
   return (
     <div className="books-wrapper">
-      <h1>{subject.toUpperCase()}</h1>
+      <h1>{name && name.toUpperCase()}</h1>
       <div className="books-container">
         {books &&
           books.map((book, i) => {
