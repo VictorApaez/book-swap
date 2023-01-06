@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const basketSlice = createSlice({
-  name: "basket",
+  name: "showBooks",
   initialState: [],
   reducers: {
     addToBasket(state, action) {
