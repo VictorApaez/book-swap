@@ -3,12 +3,12 @@ import "../styles/Navbar.css";
 import CategoryList from "./CategoryList";
 
 function Navbar() {
-  // store this in DB later
+  // will store this in DB later
   const categories = {
     fictionLiterature: {
       name: "Fiction & literature",
       genres: [
-        "Folklore",
+        "Myth",
         "General Fiction",
         "Graphic Novels & Comics",
         "Historical Fiction",
@@ -27,9 +27,9 @@ function Navbar() {
     nonFiction: {
       name: "Nonfiction",
       genres: [
-        "Activity & Game Books",
+        "Games",
         "African-American Studies",
-        "Antiques & Collectibles",
+        "Antiques",
         "Art, Architecture & Photography",
         "Astrology & Tarot",
         "Bibles & Christianity",
@@ -47,7 +47,7 @@ function Navbar() {
         "Home & Garden",
         "Humor",
         "Law",
-        "LGBTQIA+ Studies",
+        "LGBTQIA",
         "Medicine & Nursing Books",
         "Music",
         "Nature",
@@ -78,8 +78,10 @@ function Navbar() {
   return (
     <div className="navbar">
       <span className="material-symbols-outlined">menu</span>
-      <CategoryList category={categories.fictionLiterature} />
-      <CategoryList category={categories.nonFiction} />
+      <div className="categories-container">
+        <CategoryList category={categories.fictionLiterature} />
+        <CategoryList category={categories.nonFiction} />
+      </div>
     </div>
   );
 }
