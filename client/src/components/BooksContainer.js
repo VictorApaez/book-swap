@@ -8,7 +8,6 @@ import { addToShowBooks } from "../store/index.js";
 function BooksContainer({ subject }) {
   const dispatch = useDispatch();
   const { books, name } = useSelector((state) => {
-    console.log(state.showBooks);
     return state.showBooks;
   });
 
