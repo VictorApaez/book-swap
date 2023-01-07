@@ -77,7 +77,14 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <span className="material-symbols-outlined">menu</span>
+      <div className="navbar-icon-container">
+        <h3>Book Swap</h3>
+      </div>
+
+      {/* <img
+        src={require("../assets/logo.png")}
+        style={{ width: "65px", height: "50px" }}
+      ></img> */}
       <div className="categories-container">
         <CategoryList category={categories.fictionLiterature} />
         <CategoryList category={categories.nonFiction} />
