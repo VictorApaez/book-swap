@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "../styles/CategoryList.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToShowBooks } from "../store/index.js";
 import { getBookBySubject } from "../services/subject";
 
@@ -9,12 +9,15 @@ function CategoryList({ category }) {
   const list = useRef();
   const showIcon = useRef();
   const nameContainer = useRef();
+  const { name } = useSelector((state) => {
+    return state.showBooks;
+  });
 
   function showList() {
     if (list.current.style.maxHeight === "0px") {
       list.current.style.maxHeight = "3000px";
       showIcon.current.style.transform = "rotate(180deg)";
-      nameContainer.current.style.backgroundColor = "rgb(44, 44, 44)";
+      nameContainer.current.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
     } else {
       list.current.style.maxHeight = "0px";
       showIcon.current.style.transform = "rotate(0deg)";
@@ -23,6 +26,7 @@ function CategoryList({ category }) {
   }
 
   async function handleGenreClick(genre) {
+    if (genre === name) return;
     let res = await getBookBySubject(genre);
     const result = {
       books: res.items,
