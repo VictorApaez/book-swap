@@ -5,7 +5,10 @@
   flex-shrink: 0;
   background-color: var(--navbar-darker-color);
   overflow-y: scroll;
-  padding: 20px 0px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: var(--navbar-darker-color);
 }
 .navbar::-webkit-scrollbar {
   width: 0.5em;
@@ -16,10 +19,13 @@
 }
 
 .navbar::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid rgb(10, 126, 243);
+  background-color: rgb(60, 60, 60);
 }
 
-/* .categories-container {
-  border-top: 1px solid white;
-} */
+.navbar-icon-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  padding: 20px;
+  cursor: pointer;
+}

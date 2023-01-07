@@ -25,13 +25,14 @@
 
 .category-list-name {
   cursor: pointer;
-  border-bottom: 1px solid white;
-  border-top: 1px solid white;
   padding: 20px;
-  transition: all 0.3s ease-in-out;
+  margin: 10px 0;
+  transition: all 0.1s ease-in-out;
   display: flex;
   justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 .category-list-name:hover {
-  background-color: rgb(44, 44, 44);
+  background-color: rgba(0, 0, 0, 0.6);
 }
