@@ -10,6 +10,7 @@
   display: flex;
   justify-content: flex-end;
   padding: 20px;
+  margin-bottom: 40px;
   position: relative;
   transition: all ease-in-out 0.3s;
 }
@@ -38,10 +39,11 @@
   margin-bottom: 10px;
 }
 
-.book-card-info > p {
+.book-card-authors {
   color: rgb(158, 158, 158);
+  max-height: 100px;
+  overflow: hidden;
 }
-
 .book-card-info > button {
   padding: 10px;
   border: none;
