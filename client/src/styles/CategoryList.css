@@ -1,12 +1,13 @@
 .category-list-all {
   overflow: hidden;
-  max-height: 0;
   transition-delay: 0ms;
   /* transition: max-height 0.5s ease-in; */
   list-style: none;
   padding: 0;
 }
-
+.category-list-icon {
+  transition: all 0.3s ease-in-out;
+}
 .category-list-all > li {
   padding-left: 25px;
   cursor: pointer;
@@ -14,10 +15,12 @@
   margin: 10px 0;
   display: flex;
   align-items: center;
+  transition: all 0.1s ease-in-out;
 }
 
 .category-list-all > li:hover {
-  background-color: var(--main-light-color);
+  margin-left: 5px;
+  border-left: 4px solid var(--main-light-color);
 }
 
 .category-list-name {
@@ -30,5 +33,5 @@
   justify-content: space-between;
 }
 .category-list-name:hover {
-  background-color: var(--main-light-color);
+  background-color: rgb(44, 44, 44);
 }
