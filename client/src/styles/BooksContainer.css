@@ -1,8 +1,8 @@
 .books-wrapper {
   overflow: scroll;
-  flex: 1;
   height: 100%;
   padding: 30px;
+  width: 100%;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
 }
