@@ -13,6 +13,8 @@
   margin-bottom: 40px;
   position: relative;
   transition: all ease-in-out 0.3s;
+  text-decoration: none;
+  color: white;
 }
 
 .book-card:hover {

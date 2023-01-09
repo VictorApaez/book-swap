@@ -12,7 +12,8 @@ function BooksContainer({ subject }) {
   });
 
   useEffect(async () => {
-    const res = await getBookBySubject(subject);
+    const res = await getBookBySubject(subject, "1");
+    console.log(res);
     const result = {
       books: res.items,
       name: subject,

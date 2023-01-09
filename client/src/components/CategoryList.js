@@ -27,7 +27,7 @@ function CategoryList({ category }) {
 
   async function handleGenreClick(genre) {
     if (genre === name) return;
-    let res = await getBookBySubject(genre);
+    let res = await getBookBySubject(genre, 1);
     const result = {
       books: res.items,
       name: genre,

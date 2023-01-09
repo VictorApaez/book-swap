@@ -1,7 +1,10 @@
 import axios from "axios";
 
+const url =
+  "https://bookswap.up.railway.app/api" || "http://localhost:5000/api";
+
 const api = axios.create({
-  baseURL: "https://bookswap.up.railway.app/api",
+  baseURL: url,
 });
 
 export default api;
