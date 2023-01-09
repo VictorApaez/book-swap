@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const showBooksSlice = createSlice({
   name: "showBooks",
-  initialState: {},
+  initialState: "Horror",
   reducers: {
     addToShowBooks(state, action) {
       return action.payload;
@@ -9,9 +9,12 @@ const showBooksSlice = createSlice({
     reset(state, action) {
       return [];
     },
+    setSubject(state, action) {
+      return action.payload;
+    },
   },
 });
 
 //deconstruction because actions is an object
-export const { addToShowBooks } = showBooksSlice.actions;
+export const { addToShowBooks, setSubject } = showBooksSlice.actions;
 export const showBooksReducer = showBooksSlice.reducer;
