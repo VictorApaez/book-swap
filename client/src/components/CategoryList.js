@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import "../styles/CategoryList.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addToShowBooks } from "../store/index.js";
+import { addToShowBooks, setSubject } from "../store/index.js";
 import { getBookBySubject } from "../services/subject";
 
 function CategoryList({ category }) {
@@ -9,7 +9,7 @@ function CategoryList({ category }) {
   const list = useRef();
   const showIcon = useRef();
   const nameContainer = useRef();
-  const { name } = useSelector((state) => {
+  const subject = useSelector((state) => {
     return state.showBooks;
   });
 
@@ -26,13 +26,8 @@ function CategoryList({ category }) {
   }
 
   async function handleGenreClick(genre) {
-    if (genre === name) return;
-    let res = await getBookBySubject(genre, 1);
-    const result = {
-      books: res.items,
-      name: genre,
-    };
-    dispatch(addToShowBooks(result));
+    if (genre === subject) return;
+    dispatch(setSubject(genre));
   }
   return (
     <div className="category-list">
