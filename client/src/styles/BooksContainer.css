@@ -23,3 +23,33 @@
   padding: 50px 0px;
   width: 100%;
 }
+
+.page-number-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.page-number-container > p {
+  text-align: center;
+  background-color: var(--main-light-color);
+  padding: 5px;
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.page-number-container > span {
+  font-size: 40px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.page-number-container > span:hover {
+  transform: scale(1.1);
+}
