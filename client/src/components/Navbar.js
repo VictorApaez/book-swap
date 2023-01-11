@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../styles/Navbar.css";
 import CategoryList from "./CategoryList";
+import { useDispatch, useSelector } from "react-redux";
+import { changeTheme } from "../store";
 
 function Navbar() {
   // will store this in DB later
@@ -75,12 +77,29 @@ function Navbar() {
     },
   };
 
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => {
+    return state.theme;
+  });
+
+  const switchIcon = useRef();
+  function handleThemeClick() {
+    console.log(theme);
+    dispatch(changeTheme(!theme));
+  }
+
   return (
     <div className="navbar">
       <div className="navbar-icon-container">
         <h3>Book Swap</h3>
       </div>
-
+      <div
+        className="theme-switch-wrapper"
+        ref={switchIcon}
+        onClick={handleThemeClick}
+      >
+        <em>Enable Dark Mode!</em>
+      </div>
       {/* <img
         src={require("../assets/logo.png")}
         style={{ width: "65px", height: "50px" }}
