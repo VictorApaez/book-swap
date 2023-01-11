@@ -33,7 +33,7 @@
 
 .page-number-container > p {
   text-align: center;
-  background-color: var(--main-light-color);
+  background-color: var(--accent-color);
   padding: 5px;
   margin: 5px;
   width: 30px;

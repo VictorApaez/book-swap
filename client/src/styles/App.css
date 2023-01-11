@@ -1,8 +1,8 @@
 .app {
-  background-color: var(--main-dark-color);
+  background-color: var(--primary-color);
   height: 100vh;
   display: flex;
-  color: white;
+  color: var(--font-color);
   width: 100vw;
   /* overflow: hidden; */
 }

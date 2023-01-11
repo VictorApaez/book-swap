@@ -1,7 +1,6 @@
 .category-list-all {
   overflow: hidden;
   transition-delay: 0ms;
-  /* transition: max-height 0.5s ease-in; */
   list-style: none;
   padding: 0;
 }
@@ -20,7 +19,7 @@
 
 .category-list-all > li:hover {
   margin-left: 5px;
-  border-left: 4px solid var(--main-light-color);
+  border-left: 4px solid var(--accent-color);
 }
 
 .category-list-name {
