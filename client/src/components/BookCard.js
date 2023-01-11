@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import "../styles/BookCard.css";
-function BookCard({ data }) {
+import "./LoadingBookCard";
+import LoadingBookCard from "./LoadingBookCard";
+
+function BookCard({ data, loadingPage }) {
   const thumbnail =
     data?.volumeInfo?.imageLinks?.thumbnail ||
     "https://islandpress.org/sites/default/files/default_book_cover_2015.jpg";
+
+  if (loadingPage) return <LoadingBookCard />;
   return (
     <a href={data.volumeInfo.infoLink} className="book-card" target="_blank">
       <img src={thumbnail} />
