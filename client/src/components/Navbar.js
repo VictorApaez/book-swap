@@ -90,23 +90,21 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <div className="navbar-icon-container">
-        <h3>Book Swap</h3>
-      </div>
-      <div
-        className="theme-switch-wrapper"
-        ref={switchIcon}
-        onClick={handleThemeClick}
-      >
-        <em>Enable Dark Mode!</em>
-      </div>
-      {/* <img
-        src={require("../assets/logo.png")}
-        style={{ width: "65px", height: "50px" }}
-      ></img> */}
-      <div className="categories-container">
-        <CategoryList category={categories.fictionLiterature} />
-        <CategoryList category={categories.nonFiction} />
+      <div className="navbar-content">
+        <div className="navbar-icon-container">
+          <h3>Book Swap</h3>
+        </div>
+        <div
+          className="theme-switch-wrapper"
+          ref={switchIcon}
+          onClick={handleThemeClick}
+        >
+          <em>Enable Dark Mode!</em>
+        </div>
+        <div className="categories-container">
+          <CategoryList category={categories.fictionLiterature} />
+          <CategoryList category={categories.nonFiction} />
+        </div>
       </div>
     </div>
   );
