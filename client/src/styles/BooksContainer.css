@@ -1,13 +1,27 @@
 .books-wrapper {
-  overflow: scroll;
+  overflow-y: scroll;
   height: 100%;
   padding: 30px;
   width: 100%;
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+  -webkit-mask-image: linear-gradient(to top, transparent, black),
+    linear-gradient(to left, transparent 14px, black 14px);
+  -webkit-mask-size: 100% 20000px;
+  -webkit-mask-position: left bottom;
 }
+.books-wrapper:hover {
+  -webkit-mask-position: left top;
+}
+
 .books-wrapper::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  width: 14px;
+}
+
+.books-wrapper::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.books-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgb(60, 60, 60);
 }
 
 .books-wrapper > h1 {
