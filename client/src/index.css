@@ -9,9 +9,19 @@
   box-sizing: border-box;
 }
 :root {
-  --main-dark-color: rgb(27, 28, 33);
-  --main-light-color: rgb(36, 183, 226);
-  --navbar-darker-color: rgb(22, 23, 27);
+  --primary-color: rgb(27, 28, 33);
+  --secondary-color: rgb(22, 23, 27);
+  --accent-color: rgb(36, 183, 226);
+  --secondary-accent-color: rgba(83, 100, 255, 0.3);
+  --font-color: #e1e1ff;
+  --heading-color: #818cab;
+
+  /* --primary-color: white;
+  --secondary-color: rgb(127, 127, 127);
+  --accent-color: rgb(36, 183, 226);
+  --secondary-accent-color: rgba(83, 100, 255, 0.3);
+  --font-color: #272727;
+  --heading-color: #4c4c4c; */
 }
 
 body {
