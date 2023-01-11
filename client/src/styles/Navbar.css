@@ -3,15 +3,28 @@
   flex-basis: 260px;
   flex-grow: 0;
   flex-shrink: 0;
-  background-color: var(--navbar-darker-color);
   overflow-y: scroll;
+  overflow-x: hidden;
   padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: var(--navbar-darker-color);
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease-in-out;
+
+  /* show scrollbar on hover
+  credits: https://stackoverflow.com/questions/16921582/how-can-i-fade-in-the-scrollbar-on-hover-webkit-only/65665171#65665171
+   */
+  -webkit-mask-image: linear-gradient(to top, transparent, black),
+    linear-gradient(to left, transparent 7px, black 7px);
+  -webkit-mask-size: 100% 20000px;
+  -webkit-mask-position: left bottom;
 }
+.navbar:hover {
+  -webkit-mask-position: left top;
+}
+
 .navbar::-webkit-scrollbar {
-  width: 0.5em;
+  width: 7px;
 }
 
 .navbar::-webkit-scrollbar-track {
@@ -82,4 +95,19 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.navbar-content {
+  /* hard coding the width based on the navbar's width - padding */
+  width: calc(240px);
+}
+
+@media only screen and (max-width: 640px) {
+  .navbar {
+    z-index: 999;
+    flex-basis: 0px;
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+  }
 }
