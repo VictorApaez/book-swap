@@ -17,7 +17,7 @@ function CategoryList({ category }) {
     if (list.current.style.maxHeight === "0px") {
       list.current.style.maxHeight = "3000px";
       showIcon.current.style.transform = "rotate(180deg)";
-      nameContainer.current.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+      nameContainer.current.style.backgroundColor = "rgb(33, 42, 132)";
     } else {
       list.current.style.maxHeight = "0px";
       showIcon.current.style.transform = "rotate(0deg)";

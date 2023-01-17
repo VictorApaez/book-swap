@@ -12,16 +12,21 @@
   --primary-color: rgb(27, 28, 33);
   --secondary-color: rgb(22, 23, 27);
   --accent-color: rgb(36, 183, 226);
-  --secondary-accent-color: rgba(83, 100, 255, 0.3);
+  --secondary-accent-color: rgb(45, 57, 167);
+  --third-accent-color: rgb(33, 42, 132);
   --font-color: #e1e1ff;
+  --secondary-font-color: black;
   --heading-color: #818cab;
+}
 
-  /* --primary-color: white;
-  --secondary-color: rgb(127, 127, 127);
+[data-theme="light"] {
+  --primary-color: rgb(249, 249, 249);
+  --secondary-color: white;
   --accent-color: rgb(36, 183, 226);
-  --secondary-accent-color: rgba(83, 100, 255, 0.3);
+  --secondary-accent-color: rgb(29, 119, 228);
   --font-color: #272727;
-  --heading-color: #4c4c4c; */
+  --secondary-font-color: white;
+  --heading-color: #212121;
 }
 
 body {

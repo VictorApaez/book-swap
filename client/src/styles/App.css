@@ -5,4 +5,5 @@
   color: var(--font-color);
   width: 100vw;
   /* overflow: hidden; */
+  padding-top: 60px;
 }
