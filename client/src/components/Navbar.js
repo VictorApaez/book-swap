@@ -91,9 +91,6 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar-content">
-        <div className="navbar-icon-container">
-          <h3>Book Swap</h3>
-        </div>
         <div
           className="theme-switch-wrapper"
           ref={switchIcon}
