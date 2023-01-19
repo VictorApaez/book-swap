@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "../styles/Navbar.css";
+import "../styles/Aside.css";
 import CategoryList from "./CategoryList";
 import { useDispatch, useSelector } from "react-redux";
 import { changeTheme } from "../store";
@@ -89,8 +89,8 @@ function Navbar() {
   }
 
   return (
-    <div className="navbar">
-      <div className="navbar-content">
+    <div className="aside">
+      <div className="aside-content">
         <div
           className="theme-switch-wrapper"
           ref={switchIcon}

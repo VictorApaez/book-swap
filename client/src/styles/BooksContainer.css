@@ -33,8 +33,8 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
   column-gap: 30px;
   padding: 50px 0px;
   width: 100%;
@@ -70,7 +70,7 @@
   transform: scale(1.1);
 }
 /* 640 */
-@media only screen and (min-width: 1000px) {
+/* @media only screen and (min-width: 1000px) {
   .books-container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -86,4 +86,4 @@
   .books-container {
     grid-template-columns: repeat(4, 1fr);
   }
-}
+} */
