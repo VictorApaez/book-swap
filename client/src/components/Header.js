@@ -3,13 +3,13 @@ import "../styles/Header.css";
 function Header() {
   return (
     <div className="header">
-      <h3>The Book Swap</h3>
-      <form className="header-searchbar">
-        <span class="material-symbols-outlined">search</span>
-        <input placeholder="Search..."></input>
-        <button></button>
-      </form>
-      <img src="#" />
+      <span class="material-symbols-outlined">menu</span>
+      <h3 className="header-logo">The Book Swap</h3>
+      <ul className="header-nav">
+        <li>Home</li>
+        <li>About</li>
+        <li>Sign In</li>
+      </ul>
     </div>
   );
 }

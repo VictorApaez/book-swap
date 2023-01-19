@@ -91,6 +91,12 @@ function Navbar() {
   return (
     <div className="aside">
       <div className="aside-content">
+        <form className="header-searchbar">
+          <input placeholder="Search..."></input>
+          <button>
+            <span class="material-symbols-outlined">search</span>
+          </button>
+        </form>
         <div
           className="theme-switch-wrapper"
           ref={switchIcon}
