@@ -10,6 +10,8 @@
   padding-right: 17px;
   background-color: var(--secondary-color);
   transition: all 0.3s ease-in-out;
+  padding-top: 20px;
+  z-index: 100;
 
   /* show scrollbar on hover
   credits: https://stackoverflow.com/questions/16921582/how-can-i-fade-in-the-scrollbar-on-hover-webkit-only/65665171#65665171
@@ -88,17 +90,49 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.aside-searchbar {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  margin-bottom: 1rem;
+  border-radius: 60px;
+  overflow: hidden;
+}
+.aside-searchbar > input {
+  width: 100%;
+  padding: 1rem 0;
+  padding-left: 2rem;
+  border: none;
+  background-color: transparent;
+}
+
+.aside-searchbar > button {
+  width: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding-right: 2rem;
+}
+
 .aside-content {
   /* hard coding the width based on the navbar's width - padding */
   width: calc(250px);
 }
 
-@media only screen and (max-width: 640px) {
+/* @media only screen and (max-width: 640px) {
   .aside {
     z-index: 999;
     flex-basis: 0px;
     padding: 0;
     margin: 0;
     overflow-y: hidden;
+  }
+} */
+
+@media screen and (max-width: 640px) {
+  .aside {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    padding-top: 80px;
   }
 }
