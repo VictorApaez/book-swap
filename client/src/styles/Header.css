@@ -20,6 +20,7 @@
 }
 .header-menu-icon {
   cursor: pointer;
+  display: none;
 }
 .header-dropdown {
   cursor: pointer;
@@ -51,4 +52,10 @@
 .header-nav > li:hover {
   background-color: var(--accent-color);
   color: var(--secondary-font-color);
+}
+
+@media screen and (max-width: 640px) {
+  .header-menu-icon {
+    display: block;
+  }
 }

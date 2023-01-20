@@ -41,8 +41,12 @@
   margin-bottom: 10px;
 }
 
+.book-card-info > h4 {
+  color: var(--font-color);
+}
+
 .book-card-authors {
-  color: rgb(158, 158, 158);
+  color: var(--heading-color);
   max-height: 100px;
   overflow: hidden;
 }
