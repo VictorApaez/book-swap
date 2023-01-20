@@ -15,6 +15,7 @@ function BooksContainer() {
   useEffect(async () => {
     setPageNum(0);
     setLoadingPage(true);
+    BooksContainer.current.scrollTop = 0;
     let res = await getBookBySubject(subject, 0);
     setLoadingPage(false);
     setBooks(res.items);
@@ -22,6 +23,7 @@ function BooksContainer() {
 
   useEffect(async () => {
     setLoadingPage(true);
+    BooksContainer.current.scrollTop = 0;
     let res = await getBookBySubject(subject, pageNum);
     setLoadingPage(false);
     setBooks(res.items);
@@ -35,6 +37,7 @@ function BooksContainer() {
     if (!loadingPage) setPageNum(pageNum + 20);
     BooksContainer.current.scrollTop = 0;
   }
+
   return (
     <div className="books-wrapper" ref={BooksContainer}>
       <h1>{subject && subject.toUpperCase()}</h1>
