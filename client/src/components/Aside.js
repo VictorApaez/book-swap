@@ -98,9 +98,14 @@ function Aside({ toggleAside, setToggleAside }) {
     <div className="aside" ref={asideContainer}>
       <div className="aside-content">
         <form className="aside-searchbar">
-          <input placeholder="Search..."></input>
-          <button>
-            <span class="material-symbols-outlined">search</span>
+          <input
+            className="aside-searchbar-input"
+            placeholder="Search..."
+          ></input>
+          <button className="aside-searchbar-btn">
+            <span class="material-symbols-outlined aside-searchbar-icon">
+              search
+            </span>
           </button>
         </form>
         <div
