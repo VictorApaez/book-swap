@@ -51,7 +51,7 @@ function BooksContainer() {
         <span className="material-symbols-outlined" onClick={handlePageDown}>
           arrow_back_ios
         </span>
-        <p>{pageNum / 20}</p>
+        <p>{pageNum / 20 + 1}</p>
         <span className="material-symbols-outlined" onClick={handlePageUp}>
           arrow_forward_ios
         </span>
