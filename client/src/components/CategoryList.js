@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToShowBooks, setSubject } from "../store/index.js";
 import { getBookBySubject } from "../services/subject";
 
-function CategoryList({ category }) {
+function CategoryList({ category, toggleAside, setToggleAside }) {
   const dispatch = useDispatch();
   const list = useRef();
   const showIcon = useRef();
@@ -28,6 +28,7 @@ function CategoryList({ category }) {
   async function handleGenreClick(genre) {
     if (genre === subject) return;
     dispatch(setSubject(genre));
+    setToggleAside(!toggleAside);
   }
   return (
     <div className="category-list">
