@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "../styles/Header.css";
 function Header() {
+  const [toggle, setToggle] = useState(false);
+  const headerNav = useRef();
+
+  function toggleNav(e) {
+    if (toggle) {
+      headerNav.current.style.transform = "translateY(-100%)";
+      setToggle(false);
+      e.target.style.transform = "rotate(180deg)";
+    } else {
+      headerNav.current.style.transform = "translateY(0)";
+      setToggle(true);
+      e.target.style.transform = "rotate(0deg)";
+    }
+  }
   return (
-    <div className="header">
-      <span class="material-symbols-outlined">menu</span>
-      <h3 className="header-logo">The Book Swap</h3>
-      <ul className="header-nav">
+    <div className="header-wrapper">
+      <div className="header">
+        <span class="material-symbols-outlined">menu</span>
+        <h3 className="header-logo">The Book Swap</h3>
+        <span
+          className="header-dropdown material-symbols-outlined"
+          onClick={(e) => toggleNav(e)}
+        >
+          arrow_drop_down_circle
+        </span>
+      </div>
+      <ul ref={headerNav} className="header-nav">
         <li>Home</li>
         <li>About</li>
         <li>Sign In</li>
