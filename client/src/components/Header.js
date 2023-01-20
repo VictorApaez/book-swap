@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "../styles/Header.css";
-function Header() {
+function Header({ setToggleAside, toggleAside }) {
   const [toggle, setToggle] = useState(false);
   const headerNav = useRef();
 
@@ -15,10 +15,19 @@ function Header() {
       e.target.style.transform = "rotate(0deg)";
     }
   }
+
+  function openAside() {
+    setToggleAside(!toggleAside);
+  }
   return (
     <div className="header-wrapper">
       <div className="header">
-        <span class="material-symbols-outlined">menu</span>
+        <span
+          className="material-symbols-outlined header-menu-icon"
+          onClick={openAside}
+        >
+          menu
+        </span>
         <h3 className="header-logo">The Book Swap</h3>
         <span
           className="header-dropdown material-symbols-outlined"
