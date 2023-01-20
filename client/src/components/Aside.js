@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "../styles/Aside.css";
 import CategoryList from "./CategoryList";
 import { useDispatch, useSelector } from "react-redux";
 import { changeTheme } from "../store";
 
-function Navbar() {
+function Aside({ toggleAside, setToggleAside }) {
   // will store this in DB later
   const categories = {
     fictionLiterature: {
@@ -76,7 +76,7 @@ function Navbar() {
       ],
     },
   };
-
+  const asideContainer = useRef();
   const dispatch = useDispatch();
   const theme = useSelector((state) => {
     return state.theme;
@@ -84,14 +84,20 @@ function Navbar() {
 
   const switchIcon = useRef();
   function handleThemeClick() {
-    console.log(theme);
     dispatch(changeTheme(!theme));
   }
 
+  useEffect(() => {
+    if (toggleAside) {
+      asideContainer.current.style.left = "0";
+    } else {
+      asideContainer.current.style.left = "-100%";
+    }
+  }, [toggleAside]);
   return (
-    <div className="aside">
+    <div className="aside" ref={asideContainer}>
       <div className="aside-content">
-        <form className="header-searchbar">
+        <form className="aside-searchbar">
           <input placeholder="Search..."></input>
           <button>
             <span class="material-symbols-outlined">search</span>
@@ -105,12 +111,20 @@ function Navbar() {
           <em>Enable Dark Mode!</em>
         </div>
         <div className="categories-container">
-          <CategoryList category={categories.fictionLiterature} />
-          <CategoryList category={categories.nonFiction} />
+          <CategoryList
+            setToggleAside={setToggleAside}
+            category={categories.fictionLiterature}
+            toggleAside={toggleAside}
+          />
+          <CategoryList
+            setToggleAside={setToggleAside}
+            category={categories.nonFiction}
+            toggleAside={toggleAside}
+          />
         </div>
       </div>
     </div>
   );
 }
 
-export default Navbar;
+export default Aside;
