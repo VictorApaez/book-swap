@@ -10,7 +10,7 @@
   padding-right: 17px;
   background-color: var(--secondary-color);
   transition: all 0.3s ease-in-out;
-  padding-top: 20px;
+  padding-top: 5rem;
   z-index: 100;
 
   /* show scrollbar on hover
@@ -94,16 +94,14 @@ input:checked + .slider:before {
   display: flex;
   width: 100%;
   margin-bottom: 1rem;
-  justify-content: flex-end;
   position: relative;
 }
 .aside-searchbar-input {
   background-color: var(--font-color);
-  padding: 1rem 0;
-  padding-left: 2rem;
+  padding: 1rem 3rem;
   border: none;
-  height: 50px;
-  width: 50px;
+  height: 100%;
+  width: 100%;
   border-radius: 50px;
   transition: all 0.4s ease-in-out;
   z-index: 1;
@@ -113,27 +111,16 @@ input:checked + .slider:before {
   position: absolute;
   background-color: var(--font-color);
   color: var(--secondary-font-color);
-  top: calc(50%-50px);
-  right: calc(50%-50px);
+  top: 0;
+  right: 1rem;
+  bottom: 0;
+  margin: auto;
   border: none;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 50px;
   z-index: 2;
-  transition: all 0.1s ease-in-out;
-  opacity: 1;
-}
-
-.aside-searchbar:hover .aside-searchbar-input,
-.aside-searchbar-input:focus {
-  width: 100%;
-}
-
-.aside-searchbar:hover .aside-searchbar-btn,
-.aside-searchbar-input:focus + .aside-searchbar-btn {
-  z-index: -1;
-  opacity: 0;
 }
 
 .aside-content {
@@ -145,6 +132,6 @@ input:checked + .slider:before {
     position: absolute;
     top: 0;
     left: -100%;
-    padding-top: 80px;
+    padding-top: 7rem;
   }
 }

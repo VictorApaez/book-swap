@@ -28,7 +28,7 @@ function Header({ setToggleAside, toggleAside }) {
         >
           menu
         </span>
-        <h3 className="header-logo">The Book Swap</h3>
+        <h1 className="header-logo">The Book Swap</h1>
         <span
           className="header-dropdown material-symbols-outlined"
           onClick={(e) => toggleNav(e)}

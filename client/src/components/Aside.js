@@ -113,7 +113,7 @@ function Aside({ toggleAside, setToggleAside }) {
           ref={switchIcon}
           onClick={handleThemeClick}
         >
-          <em>Enable Dark Mode!</em>
+          <em>Dark Mode Enabled</em>
         </div>
         <div className="categories-container">
           <CategoryList
