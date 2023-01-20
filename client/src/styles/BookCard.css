@@ -24,7 +24,7 @@
 
 .book-card > img {
   object-fit: cover;
-  width: 128px;
+  /* width: 128px; */
   height: 195px;
   border-radius: 20px;
   position: absolute;

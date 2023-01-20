@@ -18,7 +18,9 @@
   background-color: var(--secondary-color);
   padding: 0 1.5rem;
 }
-
+.header-menu-icon {
+  cursor: pointer;
+}
 .header-dropdown {
   cursor: pointer;
   transform: rotate(180deg);

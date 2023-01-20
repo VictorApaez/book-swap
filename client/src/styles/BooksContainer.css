@@ -1,7 +1,7 @@
 .books-wrapper {
+  padding-top: 40px;
   overflow-y: scroll;
   height: 100%;
-  padding: 30px;
   width: 100%;
   -webkit-mask-image: linear-gradient(to top, transparent, black),
     linear-gradient(to left, transparent 14px, black 14px);
@@ -25,7 +25,7 @@
 }
 
 .books-wrapper > h1 {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-left: 20px;
 }
 
@@ -69,21 +69,3 @@
 .page-number-container > span:hover {
   transform: scale(1.1);
 }
-/* 640 */
-/* @media only screen and (min-width: 1000px) {
-  .books-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media only screen and (min-width: 1300px) {
-  .books-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media only screen and (min-width: 1600px) {
-  .books-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-} */
