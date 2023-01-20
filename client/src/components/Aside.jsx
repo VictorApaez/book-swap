@@ -1,3 +1,4 @@
+import { SearchBar } from "./SearchBar";
 import React, { useEffect, useRef } from "react";
 import "../styles/Aside.css";
 import CategoryList from "./CategoryList";
@@ -97,17 +98,7 @@ function Aside({ toggleAside, setToggleAside }) {
   return (
     <div className="aside" ref={asideContainer}>
       <div className="aside-content">
-        <form className="aside-searchbar">
-          <input
-            className="aside-searchbar-input"
-            placeholder="Search..."
-          ></input>
-          <button className="aside-searchbar-btn">
-            <span class="material-symbols-outlined aside-searchbar-icon">
-              search
-            </span>
-          </button>
-        </form>
+        <SearchBar />
         <div
           className="theme-switch-wrapper"
           ref={switchIcon}

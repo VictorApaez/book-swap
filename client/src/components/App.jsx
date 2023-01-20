@@ -1,8 +1,10 @@
 import "../styles/App.css";
-import Home from "./Home";
+import Home from "../pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Aside from "./Aside";
-import Header from "./Header.js";
+import Header from "./Header";
+import About from "../pages/About";
+import SignIn from "../pages/SignIn";
 import { useState } from "react";
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
               </>
             }
           />
+          <Route path="/About" element={<About />} />
+          <Route path="/SignIn" element={<SignIn />} />
         </Routes>
       </div>
     </Router>

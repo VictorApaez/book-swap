@@ -10,7 +10,7 @@
   padding-right: 17px;
   background-color: var(--secondary-color);
   transition: all 0.3s ease-in-out;
-  padding-top: 5rem;
+  padding-top: 2rem;
   z-index: 100;
 
   /* show scrollbar on hover
@@ -90,13 +90,13 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.aside-searchbar {
+.aside-search-bar {
   display: flex;
   width: 100%;
   margin-bottom: 1rem;
   position: relative;
 }
-.aside-searchbar-input {
+.aside-search-bar-input {
   background-color: var(--font-color);
   padding: 1rem 3rem;
   border: none;
@@ -107,7 +107,7 @@ input:checked + .slider:before {
   z-index: 1;
 }
 
-.aside-searchbar-btn {
+.aside-search-bar-btn {
   position: absolute;
   background-color: var(--font-color);
   color: var(--secondary-font-color);
