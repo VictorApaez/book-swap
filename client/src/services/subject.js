@@ -9,10 +9,9 @@ export const getBookBySubject = async (subject, index) => {
   }
 };
 
-export const getBooks = async (input) => {
+export const getBooksByAny = async (input) => {
   try {
     const query = input.split(" ").join("%20");
-    console.log(query);
     const res = await api.get(
       `https://www.googleapis.com/books/v1/volumes?q=${query}`
     );
