@@ -1,48 +1,61 @@
 import React, { useEffect, useRef, useState } from "react";
-import { getBookBySubject } from "../services/subject";
+import { getBookBySubject, getBooksByAny } from "../services/books.js";
+import { updateBooks } from "../store/index.js";
 import BookCard from "./BookCard";
 import "../styles/BooksContainer.css";
 import { useDispatch, useSelector } from "react-redux";
 
-function BooksContainer() {
+function BooksContainer({ setLoadingPage, loadingPage, pageNum, setPageNum }) {
   const BooksContainer = useRef();
-  const [pageNum, setPageNum] = useState(0);
-  const [loadingPage, setLoadingPage] = useState(false);
-  const subject = useSelector((state) => {
-    return state.showBooks;
-  });
-  const [books, setBooks] = useState();
-  useEffect(async () => {
-    setPageNum(0);
-    setLoadingPage(true);
-    BooksContainer.current.scrollTop = 0;
-    let res = await getBookBySubject(subject, 0);
-    setLoadingPage(false);
-    setBooks(res.items);
-  }, [subject]);
+  const books = useSelector((state) => state.books.data);
+  const subject = useSelector((state) => state.books.subject);
+  const customSearch = useSelector((state) => state.books.customSearch);
+  const dispatch = useDispatch();
 
   useEffect(async () => {
     setLoadingPage(true);
-    BooksContainer.current.scrollTop = 0;
-    let res = await getBookBySubject(subject, pageNum);
+    setPageNum(0);
+    let res = await getBookBySubject("Horror", 0);
+    dispatch(updateBooks({ subject: "Horror", data: res.items }));
     setLoadingPage(false);
-    setBooks(res.items);
+  }, []);
+
+  useEffect(() => {
+    BooksContainer.current.scrollTop = 0;
+  }, [loadingPage, books]);
+
+  useEffect(async () => {
+    BooksContainer.current.scrollTop = 0;
+    setLoadingPage(true);
+    let res;
+    if (customSearch) {
+      console.log(pageNum);
+      res = await getBooksByAny(subject, pageNum);
+    } else {
+      res = await getBookBySubject(subject, pageNum);
+    }
+    setLoadingPage(false);
+    dispatch(
+      updateBooks({
+        subject: subject,
+        data: res.items,
+        customSearch: customSearch,
+      })
+    );
   }, [pageNum]);
 
   function handlePageDown() {
     if (pageNum > 0 && !loadingPage) setPageNum(pageNum - 20);
-    BooksContainer.current.scrollTop = 0;
   }
   function handlePageUp() {
     if (!loadingPage) setPageNum(pageNum + 20);
-    BooksContainer.current.scrollTop = 0;
   }
 
   return (
     <div className="books-wrapper" ref={BooksContainer}>
       <h1>{subject && subject.toUpperCase()}</h1>
       <div className="books-container">
-        {books &&
+        {books?.length > 0 &&
           books.map((book, i) => {
             return <BookCard key={i} data={book} loadingPage={loadingPage} />;
           })}
