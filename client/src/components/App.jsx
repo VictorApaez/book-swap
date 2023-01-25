@@ -10,6 +10,8 @@ import Main from "./Main";
 
 function App() {
   const [toggleAside, setToggleAside] = useState(false);
+  const [loadingPage, setLoadingPage] = useState(false);
+  const [pageNum, setPageNum] = useState(0);
 
   return (
     <Router>
@@ -23,8 +25,17 @@ function App() {
                 <Aside
                   toggleAside={toggleAside}
                   setToggleAside={setToggleAside}
+                  setLoadingPage={setLoadingPage}
+                  loadingPage={loadingPage}
+                  setPageNum={setPageNum}
+                  pageNum={pageNum}
                 />
-                <Home />
+                <Home
+                  setLoadingPage={setLoadingPage}
+                  loadingPage={loadingPage}
+                  setPageNum={setPageNum}
+                  pageNum={pageNum}
+                />
               </>
             }
           />
