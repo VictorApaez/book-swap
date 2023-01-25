@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const booksSlice = createSlice({
   name: "books",
-  initialState: {},
+  initialState: { subject: "none", data: {} },
   reducers: {
     updateBooks(state, action) {
       return action.payload;
