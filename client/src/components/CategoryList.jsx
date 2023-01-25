@@ -1,16 +1,22 @@
 import React, { useRef, useState } from "react";
 import "../styles/CategoryList.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addToShowBooks, setSubject } from "../store/index.js";
-import { getBookBySubject } from "../services/subject";
+import { updateBooks } from "../store/index.js";
+import { getBookBySubject } from "../services/books.js";
 
-function CategoryList({ category, toggleAside, setToggleAside }) {
+function CategoryList({
+  category,
+  toggleAside,
+  setToggleAside,
+  setLoadingPage,
+  setPageNum,
+}) {
   const dispatch = useDispatch();
   const list = useRef();
   const showIcon = useRef();
   const nameContainer = useRef();
   const subject = useSelector((state) => {
-    return state.showBooks;
+    return state.books.subject;
   });
 
   function showList() {
@@ -27,7 +33,16 @@ function CategoryList({ category, toggleAside, setToggleAside }) {
 
   async function handleGenreClick(genre) {
     if (genre === subject) return;
-    dispatch(setSubject(genre));
+    setLoadingPage(true);
+    setPageNum(0);
+    const data = await getBookBySubject(genre, 0);
+    dispatch(
+      updateBooks({
+        subject: genre,
+        data: data.items,
+      })
+    );
+    setLoadingPage(false);
     setToggleAside(!toggleAside);
   }
   return (
