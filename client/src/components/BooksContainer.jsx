@@ -34,7 +34,7 @@ function BooksContainer({ setLoadingPage, loadingPage, pageNum, setPageNum }) {
     } else {
       res = await getBookBySubject(subject, pageNum);
     }
-    setLoadingPage(false);
+
     dispatch(
       updateBooks({
         subject: subject,
@@ -42,6 +42,7 @@ function BooksContainer({ setLoadingPage, loadingPage, pageNum, setPageNum }) {
         customSearch: customSearch,
       })
     );
+    setLoadingPage(false);
   }, [pageNum]);
 
   function handlePageDown() {

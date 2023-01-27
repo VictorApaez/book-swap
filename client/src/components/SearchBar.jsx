@@ -19,7 +19,7 @@ export function SearchBar({
     setPageNum(0);
     setToggleAside(!toggleAside);
     const res = await getBooksByAny(searchInput.current.value);
-    setLoadingPage(false);
+
     if (res.totalItems > 0) {
       dispatch(
         updateBooks({
@@ -30,6 +30,7 @@ export function SearchBar({
       );
     }
     searchInput.current.value = "";
+    setLoadingPage(false);
   }
   return (
     <form className="aside-search-bar" onSubmit={handleForm}>
