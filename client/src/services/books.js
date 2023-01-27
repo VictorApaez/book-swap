@@ -14,7 +14,7 @@ export const getBooksByAny = async (input, index = 0) => {
   try {
     const query = input.split(" ").join("%20");
     const res = await api.get(
-      `https://www.googleapis.com/books/v1/volumes?q=${query}&startIndex=${index}`
+      `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=12&startIndex=${index}`
     );
     return res.data;
   } catch (e) {
