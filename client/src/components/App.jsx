@@ -7,6 +7,7 @@ import About from "../pages/About";
 import SignIn from "../pages/SignIn";
 import { useState } from "react";
 import Main from "./Main";
+import LogoAnimation from "./LogoAnimation";
 
 function App() {
   const [toggleAside, setToggleAside] = useState(false);
@@ -39,6 +40,8 @@ function App() {
               </>
             }
           />
+          <Route path="/Main" element={<Main />} />
+          <Route path="/testing" element={<LogoAnimation />} />
           <Route path="/About" element={<About />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/Main" element={<Main />} />
