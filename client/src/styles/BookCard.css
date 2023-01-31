@@ -43,6 +43,7 @@
 
 .book-card-info > h4 {
   color: var(--font-color);
+  overflow: hidden;
 }
 
 .book-card-authors {
