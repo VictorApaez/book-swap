@@ -34,6 +34,7 @@ function CategoryList({
 
   async function handleGenreClick(genre) {
     if (genre === subject) return;
+    setToggleAside(!toggleAside);
     scrollHeroTop();
     setLoadingPage(true);
     setPageNum(0);
@@ -45,7 +46,6 @@ function CategoryList({
       })
     );
     setLoadingPage(false);
-    setToggleAside(!toggleAside);
   }
   return (
     <div className="category-list">

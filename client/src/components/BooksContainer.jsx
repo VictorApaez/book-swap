@@ -22,7 +22,6 @@ function BooksContainer({
     setLoadingPage(true);
     setPageNum(0);
     let res = await getBookBySubject("Horror", 0);
-    console.log(res);
     dispatch(updateBooks({ subject: "Horror", data: res.items }));
     setLoadingPage(false);
   }, []);
