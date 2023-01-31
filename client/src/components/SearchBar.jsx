@@ -9,12 +9,14 @@ export function SearchBar({
   setPageNum,
   setToggleAside,
   toggleAside,
+  scrollHeroTop,
 }) {
   const searchInput = useRef();
   const dispatch = useDispatch();
 
   async function handleForm(e) {
     e.preventDefault();
+    scrollHeroTop();
     setLoadingPage(true);
     setPageNum(0);
     setToggleAside(!toggleAside);
