@@ -1,8 +1,10 @@
+.category-list {
+}
 .category-list-all {
-  overflow: hidden;
   transition-delay: 0ms;
   list-style: none;
   padding: 0;
+  overflow: hidden;
 }
 .category-list-icon {
   transition: all 0.3s ease-in-out;
