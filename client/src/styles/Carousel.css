@@ -1,0 +1,54 @@
+.carousel-overlay > h1 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+}
+
+.carousel-container {
+  display: flex;
+  width: 6000px;
+  position: relative;
+  transform: rotate(4deg) translateY(100px);
+}
+
+.carousel-image-container {
+  width: 3000px;
+  display: flex;
+  justify-content: space-around;
+  height: 300px;
+}
+
+.carousel-image {
+  margin: 10px 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 282px;
+  width: 192px;
+}
+
+.backward-animation {
+  animation: slide-animation 60s linear infinite;
+}
+
+.forward-animation {
+  animation: forward-animation 60s linear infinite;
+}
+
+@keyframes slide-animation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes forward-animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
