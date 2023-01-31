@@ -1,7 +1,6 @@
 import api from "./apiConfig";
 
 export const getBookBySubject = async (subject, index) => {
-  console.log(index);
   try {
     const res = await api.get(`/subject/${subject}/${index}`);
     return res.data;
