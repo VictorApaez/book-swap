@@ -1,0 +1,37 @@
+svg {
+  background-color: transparent;
+  /* height: 100%; */
+  width: 100%;
+  stroke: white;
+  stroke-width: 1;
+  margin-bottom: 20px;
+  z-index: 999;
+}
+
+.text-line text {
+  font-family: "Playfair Display", serif;
+  font-weight: normal;
+  font-style: normal;
+  fill: none;
+  font-size: 4rem;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: dash 5s linear forwards, fill 4s ease-in forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: white;
+    fill-opacity: 0;
+  }
+  to {
+    fill: white;
+    fill-opacity: 1;
+  }
+}
