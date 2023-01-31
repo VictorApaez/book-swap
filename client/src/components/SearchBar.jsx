@@ -40,7 +40,7 @@ export function SearchBar({
       <input
         ref={searchInput}
         className="aside-search-bar-input"
-        placeholder="Search..."
+        placeholder="Search by title or author..."
       ></input>
       <button className="aside-search-bar-btn">
         <span className="material-symbols-outlined aside-search-bar-icon">
