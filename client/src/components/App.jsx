@@ -30,7 +30,13 @@ function App() {
             path="/"
             element={
               <>
-                <Main></Main>
+                <Main
+                  toggleAside={toggleAside}
+                  setToggleAside={setToggleAside}
+                  setLoadingPage={setLoadingPage}
+                  setPageNum={setPageNum}
+                  scrollHeroTop={scrollHeroTop}
+                ></Main>
                 <div className="main-fade-in"></div>
                 <div className="app-hero" ref={heroSection}>
                   <Aside

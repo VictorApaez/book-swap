@@ -5,7 +5,13 @@ import "../styles/Carousel.css";
 import { SearchBar } from "../components/SearchBar";
 import LogoAnimation from "./LogoAnimation";
 
-function Main() {
+function Main({
+  setLoadingPage,
+  setPageNum,
+  setToggleAside,
+  toggleAside,
+  scrollHeroTop,
+}) {
   const images = [
     "https://books.google.com/books/content?id=oLr2iVoNENAC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "https://books.google.com/books/content?id=3Hr5ONX-2G8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
@@ -38,7 +44,13 @@ function Main() {
         <div className="main-overlay-bg-animation" style={animate}></div>
         <LogoAnimation></LogoAnimation>
         <div className="main-search-bar">
-          <SearchBar></SearchBar>
+          <SearchBar
+            toggleAside={toggleAside}
+            setToggleAside={setToggleAside}
+            setLoadingPage={setLoadingPage}
+            setPageNum={setPageNum}
+            scrollHeroTop={scrollHeroTop}
+          ></SearchBar>
         </div>
       </div>
       <CarouselContainer images={images} />
