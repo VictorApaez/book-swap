@@ -9,14 +9,13 @@
   display: flex;
   width: 6000px;
   position: relative;
-  transform: rotate(4deg) translateY(100px);
+  transform: rotate(4deg) translateY(200px);
 }
 
 .carousel-image-container {
   width: 3000px;
   display: flex;
   justify-content: space-around;
-  height: 300px;
 }
 
 .carousel-image {

@@ -1,13 +1,11 @@
 .main {
   width: 100%;
-  height: 100px;
-  background-color: rebeccapurple;
 }
 
 .main-wrapper {
   overflow: hidden;
   display: flex;
-  height: 100%;
+  height: 100vh;
   flex-direction: column;
   position: relative;
 }
