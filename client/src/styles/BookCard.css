@@ -55,4 +55,5 @@
   border: none;
   border-radius: 20px;
   background-color: rgb(35, 184, 226);
+  cursor: pointer;
 }
