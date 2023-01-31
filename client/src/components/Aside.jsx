@@ -11,6 +11,7 @@ function Aside({
   loadingPage,
   setLoadingPage,
   setPageNum,
+  scrollHeroTop,
 }) {
   // will store this in DB later
   const categories = {
@@ -109,15 +110,14 @@ function Aside({
           setPageNum={setPageNum}
           setToggleAside={setToggleAside}
           toggleAside={toggleAside}
+          scrollHeroTop={scrollHeroTop}
         />
         <div
           className="theme-switch-wrapper"
           ref={switchIcon}
           onClick={handleThemeClick}
-        >
-          <em>Dark Mode Enabled</em>
-        </div>
-        <div className="categories-container">
+        ></div>
+        <div className="aside-categories-container">
           <CategoryList
             setToggleAside={setToggleAside}
             category={categories.fictionLiterature}
@@ -125,6 +125,7 @@ function Aside({
             loadingPage={loadingPage}
             setLoadingPage={setLoadingPage}
             setPageNum={setPageNum}
+            scrollHeroTop={scrollHeroTop}
           />
           <CategoryList
             setToggleAside={setToggleAside}
@@ -133,6 +134,7 @@ function Aside({
             loadingPage={loadingPage}
             setLoadingPage={setLoadingPage}
             setPageNum={setPageNum}
+            scrollHeroTop={scrollHeroTop}
           />
         </div>
       </div>
