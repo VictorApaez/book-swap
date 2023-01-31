@@ -17,6 +17,7 @@ export function SearchBar({
 
   async function handleForm(e) {
     e.preventDefault();
+    if (searchInput.current.value === "") return;
     scrollHeroTop();
     setLoadingPage(true);
     setPageNum(0);
