@@ -5,7 +5,7 @@ import Aside from "./Aside";
 import Header from "./Header";
 import About from "../pages/About";
 import SignIn from "../pages/SignIn";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Main from "./Main";
 import LogoAnimation from "./LogoAnimation";
 
@@ -13,7 +13,14 @@ function App() {
   const [toggleAside, setToggleAside] = useState(false);
   const [loadingPage, setLoadingPage] = useState(false);
   const [pageNum, setPageNum] = useState(0);
+  const heroSection = useRef();
 
+  function scrollHeroTop() {
+    heroSection.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
   return (
     <Router>
       <div className="app" data-theme="dark">
@@ -23,20 +30,26 @@ function App() {
             path="/"
             element={
               <>
-                <Aside
-                  toggleAside={toggleAside}
-                  setToggleAside={setToggleAside}
-                  setLoadingPage={setLoadingPage}
-                  loadingPage={loadingPage}
-                  setPageNum={setPageNum}
-                  pageNum={pageNum}
-                />
-                <Home
-                  setLoadingPage={setLoadingPage}
-                  loadingPage={loadingPage}
-                  setPageNum={setPageNum}
-                  pageNum={pageNum}
-                />
+                <Main></Main>
+                <div className="main-fade-in"></div>
+                <div className="app-hero" ref={heroSection}>
+                  <Aside
+                    toggleAside={toggleAside}
+                    setToggleAside={setToggleAside}
+                    setLoadingPage={setLoadingPage}
+                    loadingPage={loadingPage}
+                    setPageNum={setPageNum}
+                    pageNum={pageNum}
+                    scrollHeroTop={scrollHeroTop}
+                  />
+                  <Home
+                    setLoadingPage={setLoadingPage}
+                    loadingPage={loadingPage}
+                    setPageNum={setPageNum}
+                    pageNum={pageNum}
+                    scrollHeroTop={scrollHeroTop}
+                  />
+                </div>
               </>
             }
           />
