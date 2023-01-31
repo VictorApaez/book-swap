@@ -50,6 +50,7 @@ function Main({
             setLoadingPage={setLoadingPage}
             setPageNum={setPageNum}
             scrollHeroTop={scrollHeroTop}
+            initialToggle={false}
           ></SearchBar>
         </div>
       </div>

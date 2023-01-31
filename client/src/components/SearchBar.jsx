@@ -10,6 +10,7 @@ export function SearchBar({
   setToggleAside,
   toggleAside,
   scrollHeroTop,
+  initialToggle = true,
 }) {
   const searchInput = useRef();
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ export function SearchBar({
     scrollHeroTop();
     setLoadingPage(true);
     setPageNum(0);
-    setToggleAside(!toggleAside);
+    if (initialToggle) setToggleAside(!toggleAside);
     const res = await getBooksByAny(searchInput.current.value);
 
     if (res.totalItems > 0) {
