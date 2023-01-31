@@ -5,7 +5,13 @@ import BookCard from "./BookCard";
 import "../styles/BooksContainer.css";
 import { useDispatch, useSelector } from "react-redux";
 
-function BooksContainer({ setLoadingPage, loadingPage, pageNum, setPageNum }) {
+function BooksContainer({
+  setLoadingPage,
+  loadingPage,
+  pageNum,
+  setPageNum,
+  scrollHeroTop,
+}) {
   const BooksContainer = useRef();
   const books = useSelector((state) => state.books.data);
   const subject = useSelector((state) => state.books.subject);
@@ -16,25 +22,20 @@ function BooksContainer({ setLoadingPage, loadingPage, pageNum, setPageNum }) {
     setLoadingPage(true);
     setPageNum(0);
     let res = await getBookBySubject("Horror", 0);
+    console.log(res);
     dispatch(updateBooks({ subject: "Horror", data: res.items }));
     setLoadingPage(false);
   }, []);
 
-  useEffect(() => {
-    BooksContainer.current.scrollTop = 0;
-  }, [loadingPage, books]);
-
   useEffect(async () => {
-    BooksContainer.current.scrollTop = 0;
+    // scrollHeroTop();
     setLoadingPage(true);
     let res;
     if (customSearch) {
-      console.log(pageNum);
       res = await getBooksByAny(subject, pageNum);
     } else {
       res = await getBookBySubject(subject, pageNum);
     }
-
     dispatch(
       updateBooks({
         subject: subject,
@@ -46,10 +47,16 @@ function BooksContainer({ setLoadingPage, loadingPage, pageNum, setPageNum }) {
   }, [pageNum]);
 
   function handlePageDown() {
-    if (pageNum > 0 && !loadingPage) setPageNum(pageNum - 20);
+    if (pageNum > 0 && !loadingPage) {
+      setPageNum(pageNum - 20);
+      scrollHeroTop();
+    }
   }
   function handlePageUp() {
-    if (!loadingPage) setPageNum(pageNum + 20);
+    if (!loadingPage) {
+      setPageNum(pageNum + 20);
+      scrollHeroTop();
+    }
   }
 
   return (
