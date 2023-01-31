@@ -1,9 +1,14 @@
 .app {
   background-color: var(--primary-color);
-  height: 100vh;
   display: flex;
   color: var(--font-color);
-  width: 100vw;
-  /* overflow: hidden; */
-  padding-top: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-hero {
+  display: flex;
+  width: 100%;
+  padding-top: 10rem;
 }
