@@ -10,6 +10,7 @@ function CategoryList({
   setToggleAside,
   setLoadingPage,
   setPageNum,
+  scrollHeroTop,
 }) {
   const dispatch = useDispatch();
   const list = useRef();
@@ -33,6 +34,7 @@ function CategoryList({
 
   async function handleGenreClick(genre) {
     if (genre === subject) return;
+    scrollHeroTop();
     setLoadingPage(true);
     setPageNum(0);
     const data = await getBookBySubject(genre, 0);
