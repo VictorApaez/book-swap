@@ -12,20 +12,6 @@ function Main({
   toggleAside,
   scrollHeroTop,
 }) {
-  const images = [
-    "https://books.google.com/books/content?id=oLr2iVoNENAC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    "https://books.google.com/books/content?id=3Hr5ONX-2G8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    "https://books.google.com/books/content?id=FLFPCqyuU_EC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    "https://books.google.com/books/content?id=Mht4vgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    "https://books.google.com/books/content?id=gHcEDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    "https://books.google.com/books/content?id=RQDiooLMQq8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    "https://books.google.com/books/content?id=eEvlswEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    "https://books.google.com/books/content?id=EL_R7Tiig74C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    "https://books.google.com/books/content?id=L2ylzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    "https://books.google.com/books/content?id=QNBrzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    "https://books.google.com/books/content?id=L2ylzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    "https://books.google.com/books/content?id=QNBrzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-  ];
   const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
@@ -54,7 +40,7 @@ function Main({
           ></SearchBar>
         </div>
       </div>
-      <CarouselContainer images={images} />
+      <CarouselContainer />
     </div>
   );
 }
