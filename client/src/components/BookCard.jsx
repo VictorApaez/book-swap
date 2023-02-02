@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "../styles/BookCard.css";
 import "./LoadingBookCard";
 import LoadingBookCard from "./LoadingBookCard";
+import { useSelector } from "react-redux";
 
-function BookCard({ data, loadingPage }) {
+function BookCard({ data }) {
+  const loadingPage = useSelector((state) => state.loadingPage);
   const thumbnail =
     data?.volumeInfo?.imageLinks?.thumbnail ||
     "https://islandpress.org/sites/default/files/default_book_cover_2015.jpg";

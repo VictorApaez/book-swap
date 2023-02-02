@@ -1,24 +1,20 @@
 import React, { useRef, useState } from "react";
 import "../styles/CategoryList.css";
 import { useDispatch, useSelector } from "react-redux";
-import { updateBooks } from "../store/index.js";
 import { getBookBySubject } from "../services/books.js";
-
-function CategoryList({
-  category,
+import {
   toggleAside,
-  setToggleAside,
-  setLoadingPage,
-  setPageNum,
-  scrollHeroTop,
-}) {
+  toggleLoadingPage,
+  updateBooks,
+  updatePageNum,
+} from "../store/index.js";
+
+function CategoryList({ category, scrollHeroTop }) {
   const dispatch = useDispatch();
   const list = useRef();
   const showIcon = useRef();
   const nameContainer = useRef();
-  const subject = useSelector((state) => {
-    return state.books.subject;
-  });
+  const subject = useSelector((state) => state.books.subject);
 
   function showList() {
     if (list.current.style.maxHeight === "0px") {
@@ -34,10 +30,10 @@ function CategoryList({
 
   async function handleGenreClick(genre) {
     if (genre === subject) return;
-    setToggleAside(!toggleAside);
+    dispatch(toggleAside());
     scrollHeroTop();
-    setLoadingPage(true);
-    setPageNum(0);
+    dispatch(toggleLoadingPage());
+    dispatch(updatePageNum(0));
     const data = await getBookBySubject(genre, 0);
     dispatch(
       updateBooks({
@@ -45,7 +41,7 @@ function CategoryList({
         data: data.items,
       })
     );
-    setLoadingPage(false);
+    dispatch(toggleLoadingPage());
   }
   return (
     <div className="category-list">

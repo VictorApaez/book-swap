@@ -2,16 +2,14 @@ import React from "react";
 import { useRef } from "react";
 import { getBooksByAny } from "../services/books.js";
 import { useDispatch } from "react-redux";
-import { updateBooks } from "../store/index.js";
-
-export function SearchBar({
-  setLoadingPage,
-  setPageNum,
-  setToggleAside,
+import {
+  updateBooks,
   toggleAside,
-  scrollHeroTop,
-  initialToggle = true,
-}) {
+  toggleLoadingPage,
+  updatePageNum,
+} from "../store/index.js";
+
+export function SearchBar({ scrollHeroTop, initialToggle = true }) {
   const searchInput = useRef();
   const dispatch = useDispatch();
 
@@ -19,9 +17,9 @@ export function SearchBar({
     e.preventDefault();
     if (searchInput.current.value === "") return;
     scrollHeroTop();
-    setLoadingPage(true);
-    setPageNum(0);
-    if (initialToggle) setToggleAside(!toggleAside);
+    dispatch(toggleLoadingPage());
+    dispatch(updatePageNum(0));
+    if (initialToggle) dispatch(toggleAside());
     const res = await getBooksByAny(searchInput.current.value);
 
     if (res.totalItems > 0) {
@@ -34,7 +32,7 @@ export function SearchBar({
       );
     }
     searchInput.current.value = "";
-    setLoadingPage(false);
+    dispatch(toggleLoadingPage());
   }
   return (
     <form className="aside-search-bar" onSubmit={handleForm}>

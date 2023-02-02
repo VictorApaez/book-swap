@@ -1,34 +1,34 @@
 import React, { useEffect, useRef, useState } from "react";
-import { getBookBySubject, getBooksByAny } from "../services/books.js";
-import { updateBooks } from "../store/index.js";
-import BookCard from "./BookCard";
 import "../styles/BooksContainer.css";
+import { getBookBySubject, getBooksByAny } from "../services/books.js";
+import BookCard from "./BookCard";
 import { useDispatch, useSelector } from "react-redux";
+import {
+  updateBooks,
+  toggleLoadingPage,
+  updatePageNum,
+} from "../store/index.js";
 
-function BooksContainer({
-  setLoadingPage,
-  loadingPage,
-  pageNum,
-  setPageNum,
-  scrollHeroTop,
-}) {
+function BooksContainer({ scrollHeroTop }) {
   const BooksContainer = useRef();
+  const dispatch = useDispatch();
   const books = useSelector((state) => state.books.data);
   const subject = useSelector((state) => state.books.subject);
   const customSearch = useSelector((state) => state.books.customSearch);
-  const dispatch = useDispatch();
+  const loadingPage = useSelector((state) => state.loadingPage);
+  const pageNum = useSelector((state) => state.pageNum);
 
   useEffect(async () => {
-    setLoadingPage(true);
-    setPageNum(0);
+    dispatch(toggleLoadingPage());
+    dispatch(updatePageNum(0));
     let res = await getBookBySubject("Horror", 0);
     dispatch(updateBooks({ subject: "Horror", data: res.items }));
-    setLoadingPage(false);
+    dispatch(toggleLoadingPage());
   }, []);
 
   useEffect(async () => {
     // scrollHeroTop();
-    setLoadingPage(true);
+    dispatch(toggleLoadingPage());
     let res;
     if (customSearch) {
       res = await getBooksByAny(subject, pageNum);
@@ -42,18 +42,18 @@ function BooksContainer({
         customSearch: customSearch,
       })
     );
-    setLoadingPage(false);
+    dispatch(toggleLoadingPage());
   }, [pageNum]);
 
   function handlePageDown() {
     if (pageNum > 0 && !loadingPage) {
-      setPageNum(pageNum - 20);
+      dispatch(updatePageNum(pageNum - 20));
       scrollHeroTop();
     }
   }
   function handlePageUp() {
     if (!loadingPage) {
-      setPageNum(pageNum + 20);
+      dispatch(updatePageNum(pageNum + 20));
       scrollHeroTop();
     }
   }
@@ -64,7 +64,7 @@ function BooksContainer({
       <div className="books-container">
         {books?.length > 0 &&
           books.map((book, i) => {
-            return <BookCard key={i} data={book} loadingPage={loadingPage} />;
+            return <BookCard key={i} data={book} />;
           })}
       </div>
       <div className="page-number-container">

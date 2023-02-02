@@ -5,14 +5,7 @@ import CategoryList from "./CategoryList";
 import { useDispatch, useSelector } from "react-redux";
 import { changeTheme } from "../store";
 
-function Aside({
-  toggleAside,
-  setToggleAside,
-  loadingPage,
-  setLoadingPage,
-  setPageNum,
-  scrollHeroTop,
-}) {
+function Aside({ scrollHeroTop }) {
   // will store this in DB later
   const categories = {
     fictionLiterature: {
@@ -89,7 +82,7 @@ function Aside({
   const theme = useSelector((state) => {
     return state.theme;
   });
-
+  const toggleAside = useSelector((state) => state.aside);
   const switchIcon = useRef();
   function handleThemeClick() {
     dispatch(changeTheme(!theme));
@@ -105,13 +98,7 @@ function Aside({
   return (
     <div className="aside" ref={asideContainer}>
       <div className="aside-content">
-        <SearchBar
-          setLoadingPage={setLoadingPage}
-          setPageNum={setPageNum}
-          setToggleAside={setToggleAside}
-          toggleAside={toggleAside}
-          scrollHeroTop={scrollHeroTop}
-        />
+        <SearchBar scrollHeroTop={scrollHeroTop} />
         <div
           className="theme-switch-wrapper"
           ref={switchIcon}
@@ -119,21 +106,11 @@ function Aside({
         ></div>
         <div className="aside-categories-container">
           <CategoryList
-            setToggleAside={setToggleAside}
             category={categories.fictionLiterature}
-            toggleAside={toggleAside}
-            loadingPage={loadingPage}
-            setLoadingPage={setLoadingPage}
-            setPageNum={setPageNum}
             scrollHeroTop={scrollHeroTop}
           />
           <CategoryList
-            setToggleAside={setToggleAside}
             category={categories.nonFiction}
-            toggleAside={toggleAside}
-            loadingPage={loadingPage}
-            setLoadingPage={setLoadingPage}
-            setPageNum={setPageNum}
             scrollHeroTop={scrollHeroTop}
           />
         </div>

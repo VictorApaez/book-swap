@@ -1,10 +1,14 @@
 import React, { useRef, useState } from "react";
 // import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toggleAside } from "../store";
 import "../styles/Header.css";
-function Header({ setToggleAside, toggleAside }) {
+
+function Header() {
   const [toggle, setToggle] = useState(false);
   const headerNav = useRef();
   const dropdownIcon = useRef();
+  const dispatch = useDispatch();
 
   function toggleNav() {
     if (toggle) {
@@ -19,7 +23,7 @@ function Header({ setToggleAside, toggleAside }) {
   }
 
   function openAside() {
-    setToggleAside(!toggleAside);
+    dispatch(toggleAside());
   }
   return (
     <div className="header-wrapper">

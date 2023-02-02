@@ -5,14 +5,10 @@ import Aside from "./Aside";
 import Header from "./Header";
 import About from "../pages/About";
 import SignIn from "../pages/SignIn";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Main from "./Main";
-import LogoAnimation from "./LogoAnimation";
 
 function App() {
-  const [toggleAside, setToggleAside] = useState(false);
-  const [loadingPage, setLoadingPage] = useState(false);
-  const [pageNum, setPageNum] = useState(0);
   const heroSection = useRef();
 
   function scrollHeroTop() {
@@ -24,43 +20,21 @@ function App() {
   return (
     <Router>
       <div className="app" data-theme="dark">
-        <Header setToggleAside={setToggleAside} toggleAside={toggleAside} />
+        <Header />
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <Main
-                  toggleAside={toggleAside}
-                  setToggleAside={setToggleAside}
-                  setLoadingPage={setLoadingPage}
-                  setPageNum={setPageNum}
-                  scrollHeroTop={scrollHeroTop}
-                ></Main>
+                <Main scrollHeroTop={scrollHeroTop}></Main>
                 <div className="main-fade-in"></div>
                 <div className="app-hero" ref={heroSection}>
-                  <Aside
-                    toggleAside={toggleAside}
-                    setToggleAside={setToggleAside}
-                    setLoadingPage={setLoadingPage}
-                    loadingPage={loadingPage}
-                    setPageNum={setPageNum}
-                    pageNum={pageNum}
-                    scrollHeroTop={scrollHeroTop}
-                  />
-                  <Home
-                    setLoadingPage={setLoadingPage}
-                    loadingPage={loadingPage}
-                    setPageNum={setPageNum}
-                    pageNum={pageNum}
-                    scrollHeroTop={scrollHeroTop}
-                  />
+                  <Aside scrollHeroTop={scrollHeroTop} />
+                  <Home scrollHeroTop={scrollHeroTop} />
                 </div>
               </>
             }
           />
-          <Route path="/Main" element={<Main />} />
-          <Route path="/testing" element={<LogoAnimation />} />
           <Route path="/About" element={<About />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/Main" element={<Main />} />
