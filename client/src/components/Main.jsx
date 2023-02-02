@@ -5,7 +5,7 @@ import "../styles/Carousel.css";
 import { SearchBar } from "../components/SearchBar";
 import LogoAnimation from "./LogoAnimation";
 
-function Main({ setLoadingPage, setPageNum, scrollHeroTop }) {
+function Main({ scrollHeroTop }) {
   const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
@@ -25,8 +25,6 @@ function Main({ setLoadingPage, setPageNum, scrollHeroTop }) {
         <LogoAnimation></LogoAnimation>
         <div className="main-search-bar">
           <SearchBar
-            setLoadingPage={setLoadingPage}
-            setPageNum={setPageNum}
             scrollHeroTop={scrollHeroTop}
             initialToggle={false}
           ></SearchBar>
