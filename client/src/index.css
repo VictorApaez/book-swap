@@ -15,9 +15,9 @@
   --accent-color: rgb(36, 183, 226);
   --secondary-accent-color: rgb(45, 57, 167);
   --third-accent-color: rgb(33, 42, 132);
-  --font-color: #e1e1ff;
+  --font-color: #b1b1b4;
   --secondary-font-color: black;
-  --heading-color: #818cab;
+  --heading-color: #747477;
 }
 
 [data-theme="light"] {

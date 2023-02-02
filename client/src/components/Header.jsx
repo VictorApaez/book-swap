@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../styles/Header.css";
 function Header({ setToggleAside, toggleAside }) {
   const [toggle, setToggle] = useState(false);
   const headerNav = useRef();
   const dropdownIcon = useRef();
 
-  function toggleNav(e) {
+  function toggleNav() {
     if (toggle) {
       headerNav.current.style.transform = "translateY(-100%)";
       setToggle(false);
@@ -34,12 +34,12 @@ function Header({ setToggleAside, toggleAside }) {
         <span
           className="header-dropdown material-symbols-outlined"
           ref={dropdownIcon}
-          onClick={(e) => toggleNav(e)}
+          onClick={() => toggleNav()}
         >
           arrow_drop_down_circle
         </span>
       </div>
-      <ul ref={headerNav} className="header-nav">
+      {/* <ul ref={headerNav} className="header-nav">
         <li>
           <Link to={"/"} onClick={toggleNav}>
             Home
@@ -55,7 +55,7 @@ function Header({ setToggleAside, toggleAside }) {
             Sign In
           </Link>
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 }
