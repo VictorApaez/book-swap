@@ -22,7 +22,7 @@ The tech stack used for this project includes:
 * Google Books API
 
 ## Installation
-1. Clone this repository: git clone https://github.com/<username>/<repository_name>.git
+1. Clone this repository: git clone https://github.com/VictorApaez/book-swap.git
 2. Install dependencies: npm install
 3. Create a .env file in the root directory of server and add the following variables:
 makefile
