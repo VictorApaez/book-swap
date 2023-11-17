@@ -11,7 +11,7 @@ function Main({ scrollHeroTop }) {
   useEffect(() => {
     setTimeout(() => {
       setIsAnimating(false);
-    }, 2600);
+    }, 400);
   }, []);
 
   let animate = {
