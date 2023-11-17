@@ -1,6 +1,9 @@
 .books-wrapper {
   height: fit-content;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .books-wrapper > h1 {
@@ -19,32 +22,43 @@
   width: 100%;
 }
 
-.page-number-container {
+.page-number-container > span {
   display: flex;
   justify-content: center;
+  color: rgb(37, 37, 37);
   align-items: center;
-  margin-bottom: 30px;
-}
-
-.page-number-container > p {
-  text-align: center;
-  background-color: var(--accent-color);
-  padding: 5px;
-  margin: 5px;
-  width: 30px;
-  height: 30px;
   border-radius: 50%;
-  margin-right: 12px;
+  padding: 4px;
+  transition: all;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
 }
-
-.page-number-container > span {
-  font-size: 40px;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
 .page-number-container > span:hover {
   transform: scale(1.1);
+}
+
+.page-number-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 100px;
+}
+
+.page-number-container .material-symbols-outlined {
+  cursor: pointer;
+  font-size: 24px;
+  margin: 0 15px;
+  user-select: none;
+}
+
+.page-number-container p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
 }

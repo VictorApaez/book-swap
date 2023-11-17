@@ -16,7 +16,7 @@ svg {
   font-size: 4rem;
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  animation: dash 5s linear forwards, fill 4s ease-in forwards;
+  animation: dash 3s linear forwards, fill 3s ease-in forwards;
 }
 
 @keyframes dash {
